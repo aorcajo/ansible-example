@@ -1,0 +1,7 @@
+---
+- name: Install Redis
+  hosts: all
+  vars:
+      redis_bind_interface: '0.0.0.0'
+  roles:
+      - { role: redis, become: yes }

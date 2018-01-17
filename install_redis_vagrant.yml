@@ -1,0 +1,13 @@
+---
+- name: Install ansible dependencies
+  hosts: all
+  gather_facts: False
+  pre_tasks:
+    - name: Install python2 for Ansible
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+      become: true
+    - name: Gathering Facts
+      setup:  # aka gather_facts
+
+
+- import_playbook: install_redis.yml
